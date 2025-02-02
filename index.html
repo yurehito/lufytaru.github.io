@@ -19,6 +19,7 @@
             overflow: auto;
             padding: 20px;
             transition: background 0.5s ease-in-out;
+            perspective: 1000px; /* Required for 3D effect */
         }
 
         /* Mobile Background */
@@ -37,6 +38,7 @@
             width: 400px;
             text-align: center;
             transition: transform 0.2s ease-out;
+            transform-style: preserve-3d; /* Ensures 3D effect applies */
         }
 
         input, button, select {
@@ -149,5 +151,29 @@
     <div class="watermark">
         <span>Made By</span> <a href="https://guns.lol/lucytaru" target="_blank">Rishi</a>
     </div>
+
+    <!-- Cursor Movement Effect -->
+    <script>
+        const form = document.getElementById("form");
+
+        // Function to update the rotation based on position
+        function updateRotation(x, y, width, height) {
+            let rotateY = ((x - width / 2) / width) * 20;
+            let rotateX = ((height / 2 - y) / height) * 20;
+
+            form.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
+
+        // Mouse Support (PC)
+        document.addEventListener("mousemove", (e) => {
+            updateRotation(e.clientX, e.clientY, window.innerWidth, window.innerHeight);
+        });
+
+        // Touch Support (Mobile)
+        document.addEventListener("touchmove", (e) => {
+            let touch = e.touches[0]; // Get first touch point
+            updateRotation(touch.clientX, touch.clientY, window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>
