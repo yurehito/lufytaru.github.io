@@ -96,19 +96,50 @@
             z-index: 9999;
         }
 
-        .watermark span {
-            color: #ff1493; /* Dark Pink */
-            font-weight: bold;
+        /* Watermark Style for PC */
+        @media (min-width: 769px) {
+            .watermark {
+                color: rgba(255, 255, 255, 0.8); /* White with opacity for better visibility */
+                font-weight: bold;
+            }
+
+            .watermark span {
+                color: #ff1493; /* Dark Pink */
+            }
+
+            .watermark a {
+                color: red;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .watermark a:hover {
+                text-decoration: underline;
+            }
         }
 
-        .watermark a {
-            color: red;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        /* Watermark Style for Mobile */
+        @media (max-width: 768px) {
+            .watermark {
+                font-size: 0.9em;
+                bottom: 5px;
+                right: 5px;
+                color: #ff1493; /* Keep it as Dark Pink on Mobile */
+            }
 
-        .watermark a:hover {
-            text-decoration: underline;
+            .watermark span {
+                font-weight: bold;
+            }
+
+            .watermark a {
+                color: red;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .watermark a:hover {
+                text-decoration: underline;
+            }
         }
 
         /* Responsive Design */
