@@ -14,18 +14,34 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
-            overflow: auto;
-            padding: 20px;
+            padding: 0;
             transition: background 0.5s ease-in-out;
-            perspective: 1000px; /* Required for 3D effect */
+            overflow: hidden;
         }
 
-        /* Mobile Background */
+        /* Mobile Optimization */
         @media (max-width: 768px) {
             body {
                 background: url('https://i.ibb.co/GfsHFsmn/jjk-mobile-wallpaper.jpg') no-repeat center center/cover;
+            }
+
+            .form-container {
+                width: 90%;
+                max-width: 350px;
+                padding: 20px;
+            }
+
+            .checkbox-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .watermark {
+                font-size: 0.8em;
+                bottom: 5px;
+                right: 5px;
             }
         }
 
@@ -38,7 +54,7 @@
             width: 400px;
             text-align: center;
             transition: transform 0.2s ease-out;
-            transform-style: preserve-3d; /* Ensures 3D effect applies */
+            transform-style: preserve-3d;
         }
 
         input, button, select {
@@ -96,68 +112,11 @@
             z-index: 9999;
         }
 
-        /* Watermark Style for PC */
-        @media (min-width: 769px) {
-            .watermark {
-                color: rgba(50, 50, 50, 0.8); /* Dark Gray for better visibility */
-                font-weight: bold;
-            }
-
-            .watermark span {
-                color: #4B0082; /* Indigo or Light Purple for contrast */
-            }
-
-            .watermark a {
-                color: #00BFFF; /* Sky Blue for Rishi */
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-            .watermark a:hover {
-                text-decoration: underline;
-            }
-        }
-
-        /* Watermark Style for Mobile */
-        @media (max-width: 768px) {
-            .watermark {
-                font-size: 0.9em;
-                bottom: 5px;
-                right: 5px;
-                color: #ff1493; /* Keep it as Dark Pink on Mobile */
-            }
-
-            .watermark span {
-                font-weight: bold;
-            }
-
-            .watermark a {
-                color: red;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-            .watermark a:hover {
-                text-decoration: underline;
-            }
-        }
-
         /* Responsive Design */
         @media (max-width: 600px) {
             .form-container {
                 width: 100%;
                 padding: 30px;
-            }
-
-            .checkbox-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .watermark {
-                font-size: 0.9em;
-                bottom: 5px;
-                right: 5px;
             }
         }
     </style>
@@ -187,7 +146,6 @@
     <script>
         const form = document.getElementById("form");
 
-        // Function to update the rotation based on position
         function updateRotation(x, y, width, height) {
             let rotateY = ((x - width / 2) / width) * 20;
             let rotateX = ((height / 2 - y) / height) * 20;
