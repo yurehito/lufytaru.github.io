@@ -13,34 +13,41 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            overflow: auto;
+            padding: 20px;
+            transition: background 0.5s ease-in-out;
         }
+
+        /* Mobile Background */
+        @media (max-width: 768px) {
+            body {
+                background: url('https://i.ibb.co/NRW2cJG/jjk-cute-banner-2.jpg') no-repeat center center/cover;
+            }
+        }
+
         .form-container {
             background: rgba(0, 0, 0, 0.7);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            width: 550px;
+            max-width: 90%;
+            width: 400px;
             text-align: center;
             transition: transform 0.2s ease-out;
         }
+
         input, button, select {
             font-family: 'Quicksand', sans-serif;
             border: none;
             padding: 14px;
-            margin: 10px;
+            margin: 10px 0;
             border-radius: 8px;
-            width: 90%;
+            width: 100%;
             font-size: 1.1em;
         }
-        input[type="file"] {
-            background: white;
-            padding: 10px;
-            font-size: 1em;
-            cursor: pointer;
-        }
+
         button {
             background: #e94560;
             color: white;
@@ -50,31 +57,31 @@
             border-radius: 20px;
             font-size: 1.2em;
         }
+
         button:hover {
             background: #ff2e63;
         }
+
         .checkbox-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-top: 15px;
             font-size: 1.1em;
         }
+
         label {
-            font-size: 1.3em;
-        }
-        /* Mouse movement effect */
-        body:hover .form-container {
-            transform: perspective(500px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+            font-size: 1.1em;
         }
 
-        /* Watermark style */
+        /* Watermark */
         .watermark {
             position: fixed;
             bottom: 10px;
             right: 10px;
-            color: rgba(0, 0, 0, 0.8);
-            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1em;
             font-weight: bold;
             font-family: 'Quicksand', sans-serif;
             z-index: 9999;
@@ -88,6 +95,11 @@
 
         .watermark a:hover {
             text-decoration: underline;
+        }
+
+        /* Mouse & Touch Movement Effect */
+        body:hover .form-container {
+            transform: perspective(500px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
         }
     </style>
 </head>
@@ -104,21 +116,40 @@
             <label><input type="checkbox" checked> Source Code</label>
             <label><input type="checkbox"> Binary Code</label>
         </div>
-        <button>Submit</button> <!-- Changed text to "Submit" -->
+        <button>Submit</button>
     </div>
 
     <!-- Watermark -->
     <div class="watermark">
         Made by <a href="https://guns.lol/lucytaru" target="_blank">Rishi</a>
     </div>
-    
+
     <script>
+        // Mouse Movement Effect for PC
         document.addEventListener("mousemove", (e) => {
             let x = (window.innerWidth / 2 - e.pageX) / 25;
             let y = (window.innerHeight / 2 - e.pageY) / 25;
             document.documentElement.style.setProperty('--rotateX', y + 'deg');
             document.documentElement.style.setProperty('--rotateY', -x + 'deg');
         });
+
+        // Touch Movement Effect for Mobile
+        let startX = 0, startY = 0;
+
+        document.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener("touchmove", (e) => {
+            let touch = e.touches[0];
+            let moveX = (startX - touch.clientX) / 20;
+            let moveY = (startY - touch.clientY) / 20;
+            
+            document.documentElement.style.setProperty('--rotateX', moveY + 'deg');
+            document.documentElement.style.setProperty('--rotateY', -moveX + 'deg');
+        });
+
     </script>
 </body>
 </html>
