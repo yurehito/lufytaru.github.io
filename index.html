@@ -13,7 +13,7 @@
             padding: 0;
             overflow: hidden;
         }
-        
+
         body {
             background: url('https://i.ibb.co/TMtVW7Xp/jjk-cute-banner.jpg') no-repeat center center/cover;
             color: white;
@@ -37,6 +37,14 @@
                 padding: 20px;
                 margin: auto;
             }
+
+            .watermark {
+                font-size: 1em;
+            }
+
+            .watermark a {
+                color: white;
+            }
         }
 
         .form-container {
@@ -47,8 +55,12 @@
             max-width: 90%;
             width: 400px;
             text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             transition: transform 0.2s ease-out;
-            transform-style: preserve-3d;
+            transform-style: preserve-3d; /* Ensure the container has 3D transform context */
         }
 
         input, button, select {
@@ -98,12 +110,18 @@
         /* Watermark */
         .watermark {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
             font-size: 1.2em;
             font-weight: bold;
             font-family: 'Quicksand', sans-serif;
             z-index: 9999;
+            color: black; /* Default to black for PC */
+            bottom: 10px;
+            right: 10px;
+        }
+
+        /* Hover Effect (PC) */
+        .form-container:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -130,13 +148,13 @@
 
     <!-- Cursor Movement Effect -->
     <script>
-        const form = document.getElementById("form");
-
+        // Function to update form container 3D rotation based on mouse movement
         function updateRotation(x, y, width, height) {
-            let rotateY = ((x - width / 2) / width) * 20;
-            let rotateX = ((height / 2 - y) / height) * 20;
+            let rotateY = ((x - width / 2) / width) * 20; // X axis rotation
+            let rotateX = ((height / 2 - y) / height) * 20; // Y axis rotation
 
-            form.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            // Apply 3D rotation to the form container
+            document.getElementById("form").style.transform = `translate(-50%, -50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
 
         // Mouse Support (PC)
@@ -149,6 +167,7 @@
             let touch = e.touches[0]; // Get first touch point
             updateRotation(touch.clientX, touch.clientY, window.innerWidth, window.innerHeight);
         });
+
     </script>
 </body>
 </html>
