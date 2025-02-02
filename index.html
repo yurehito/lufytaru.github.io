@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-        
+
+        /* Default Background (PC) */
         body {
             background: url('https://i.ibb.co/TMtVW7Xp/jjk-cute-banner.jpg') no-repeat center center/cover;
             color: white;
@@ -23,7 +24,7 @@
         /* Mobile Background */
         @media (max-width: 768px) {
             body {
-                background: url('https://i.ibb.co/NRW2cJG/jjk-cute-banner-2.jpg') no-repeat center center/cover;
+                background: url('https://i.ibb.co/Z1BgWNPN/jjk-mobile-wallpaper.jpg') no-repeat center center/cover;
             }
         }
 
@@ -46,6 +47,13 @@
             border-radius: 8px;
             width: 100%;
             font-size: 1.1em;
+        }
+
+        input[type="file"] {
+            background: white;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
         }
 
         button {
@@ -80,11 +88,15 @@
             position: fixed;
             bottom: 10px;
             right: 10px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1em;
+            font-size: 1.2em;
             font-weight: bold;
             font-family: 'Quicksand', sans-serif;
             z-index: 9999;
+        }
+
+        .watermark span {
+            color: #ff1493; /* Dark Pink */
+            font-weight: bold;
         }
 
         .watermark a {
@@ -97,9 +109,23 @@
             text-decoration: underline;
         }
 
-        /* Mouse & Touch Movement Effect */
-        body:hover .form-container {
-            transform: perspective(500px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .form-container {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .checkbox-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .watermark {
+                font-size: 0.9em;
+                bottom: 5px;
+                right: 5px;
+            }
         }
     </style>
 </head>
@@ -121,35 +147,7 @@
 
     <!-- Watermark -->
     <div class="watermark">
-        Made by <a href="https://guns.lol/lucytaru" target="_blank">Rishi</a>
+        <span>Made By</span> <a href="https://guns.lol/lucytaru" target="_blank">Rishi</a>
     </div>
-
-    <script>
-        // Mouse Movement Effect for PC
-        document.addEventListener("mousemove", (e) => {
-            let x = (window.innerWidth / 2 - e.pageX) / 25;
-            let y = (window.innerHeight / 2 - e.pageY) / 25;
-            document.documentElement.style.setProperty('--rotateX', y + 'deg');
-            document.documentElement.style.setProperty('--rotateY', -x + 'deg');
-        });
-
-        // Touch Movement Effect for Mobile
-        let startX = 0, startY = 0;
-
-        document.addEventListener("touchstart", (e) => {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-        });
-
-        document.addEventListener("touchmove", (e) => {
-            let touch = e.touches[0];
-            let moveX = (startX - touch.clientX) / 20;
-            let moveY = (startY - touch.clientY) / 20;
-            
-            document.documentElement.style.setProperty('--rotateX', moveY + 'deg');
-            document.documentElement.style.setProperty('--rotateY', -moveX + 'deg');
-        });
-
-    </script>
 </body>
 </html>
