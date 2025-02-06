@@ -4,53 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achie Bot</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-CODE.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <img src="https://i.ibb.co/0pYGzR8P/Achie-logo-cc.png" alt="Achie Bot Logo" class="logo">
-        <h1>Achie Bot</h1>
-    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/achie logo cc.png" alt="Achie Logo" class="small-avatar">
+            <span>Achie</span>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
     <main>
-        <section class="features">
-            <div class="feature-card" id="greeting">
-                <img src="icons/greeting.png" alt="Greeting">
-                <p class="description">Greet members when they join with custom embeds.</p>
+        <div class="banner">
+            <img src="assets/achie website banner.png" alt="Achie Banner" class="banner-img">
+            <div class="bot-info">
+                <img src="assets/achie logo cc.png" alt="Achie Avatar" class="bot-avatar">
+                <h1>Achie</h1>
             </div>
-            <div class="feature-card" id="boost-greet">
-                <img src="icons/boost.png" alt="Boost Greet">
-                <p class="description">Celebrate members who boost your server with a special message.</p>
+        </div>
+
+        <section class="overview">
+            <h2>Overview</h2>
+            <div class="stats">
+                <div class="card">
+                    <i class="fas fa-server"></i>
+                    <span>Total Servers</span>
+                    <p>123</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <span>Total Users</span>
+                    <p>12.3K</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-clock"></i>
+                    <span>Uptime</span>
+                    <p>100.0%</p>
+                </div>
             </div>
-            <div class="feature-card" id="moderation">
-                <img src="icons/moderation.png" alt="Moderation">
-                <p class="description">Manage your server with advanced moderation tools.</p>
+        </section>
+
+        <section class="bot-features">
+            <h2>Bot Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-comment-alt"></i>
+                    <h3>Welcome Messages</h3>
+                    <p>Customize welcome and leave messages.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Auto Roles</h3>
+                    <p>Automatic role assignment for new members.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Starboard</h3>
+                    <p>Configure starboard settings and thresholds.</p>
+                </div>
             </div>
-            <div class="feature-card" id="auto-mod">
-                <img src="icons/auto-mod.png" alt="Auto Mod">
-                <p class="description">Automatically moderate content to keep your server clean.</p>
-            </div>
-            <div class="feature-card" id="giveaway">
-                <img src="icons/giveaway.png" alt="Giveaway">
-                <p class="description">Host fun giveaways and reward your community.</p>
-            </div>
-            <div class="feature-card" id="logging">
-                <img src="icons/logging.png" alt="Logging">
-                <p class="description">Save logs of VC, chat, moderation, and more.</p>
-            </div>
-            <div class="feature-card" id="ticketing">
-                <img src="icons/ticketing.png" alt="Ticketing">
-                <p class="description">Create a support ticket system without clutter.</p>
-            </div>
-            <div class="feature-card" id="role">
-                <img src="icons/role.png" alt="Role Management">
-                <p class="description">Easily assign and manage roles for your members.</p>
+        </section>
+
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <a href="privacy.html" class="action-card">
+                    <i class="fas fa-shield-alt"></i> Privacy Policy
+                </a>
+                <a href="terms.html" class="action-card">
+                    <i class="fas fa-file-contract"></i> Terms of Service
+                </a>
+                <a href="https://discord.gg/TrPdQQxjcJ" class="action-card">
+                    <i class="fas fa-headset"></i> Support Server
+                </a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands" class="action-card">
+                    <i class="fas fa-user-plus"></i> Invite
+                </a>
             </div>
         </section>
     </main>
-    <footer>
-        <a href="terms.html" target="_blank">Terms of Service</a>
-        <a href="privacy.html" target="_blank">Privacy Policy</a>
-    </footer>
-    <script src="script.js"></script>
+
+    <script src="assets/script.js"></script>
 </body>
 </html>
