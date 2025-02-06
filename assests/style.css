@@ -1,133 +1,106 @@
-/* General Reset */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background-color: #0d0d0d;
     color: white;
-    display: flex;
 }
 
-/* Sidebar */
 .sidebar {
     width: 250px;
-    background: #1a1a1a;
-    padding: 20px;
     height: 100vh;
+    position: fixed;
+    background: #111;
+    padding: 20px;
 }
 
-.sidebar-header {
+.logo {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    gap: 10px;
 }
 
-.small-avatar {
-    width: 40px;
+.logo img {
+    width: 50px;
     border-radius: 50%;
-    margin-right: 10px;
 }
 
-.menu {
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
     list-style: none;
     padding: 0;
 }
 
-.menu li {
-    padding: 10px 0;
+.nav-links li {
+    margin: 15px 0;
 }
 
-.menu a {
-    color: white;
+.nav-links a {
     text-decoration: none;
+    color: white;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-.menu i {
-    margin-right: 10px;
-}
-
-/* Main Content */
-main {
-    flex: 1;
+.main-content {
+    margin-left: 270px;
     padding: 20px;
 }
 
-/* Banner */
 .banner {
-    background: url('achie website banner.png') no-repeat center;
-    background-size: cover;
-    padding: 60px;
-    position: relative;
+    background: pink;
+    padding: 50px;
     text-align: center;
+    position: relative;
 }
 
 .bot-info {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.bot-info img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card, .feature-card, .action-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card h3 {
+    margin: 5px 0;
+}
+
+.card:hover, .feature-card:hover, .action-card:hover {
+    transform: translateY(-5px);
+}
+
+.quick-actions .action-card {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.bot-avatar {
-    width: 80px;
-    border-radius: 50%;
-    border: 3px solid white;
-}
-
-/* Overview */
-.overview h2, .bot-features h2, .quick-actions h2 {
-    margin-top: 20px;
-}
-
-.stats {
-    display: flex;
-    gap: 15px;
-}
-
-.card {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* Features */
-.features-grid {
-    display: flex;
-    gap: 15px;
-}
-
-.feature-card {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1;
-}
-
-/* Quick Actions */
-.actions-grid {
-    display: flex;
-    gap: 15px;
-}
-
-.action-card {
-    background: #333;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
+    gap: 10px;
     text-decoration: none;
-    flex: 1;
+    color: white;
 }
 
-.action-card:hover {
-    transform: scale(1.05);
+i {
+    font-size: 24px;
 }
