@@ -52,7 +52,7 @@ body {
 }
 
 .banner {
-    background: pink;
+    background: #ffb6c1; /* Light pink background */
     padding: 50px;
     text-align: center;
     position: relative;
@@ -71,17 +71,51 @@ body {
     border-radius: 50%;
 }
 
-.cards {
+/* Overview Section - Square Cards */
+.overview .cards {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.card, .feature-card, .action-card {
+.overview .card {
     background: #222;
-    padding: 20px;
+    width: 150px;
+    height: 150px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    transition: 0.3s;
+}
+
+.overview .card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Feature Section - Door-Shaped Cards */
+.features .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-card {
+    background: #222;
+    width: 180px;
+    height: 230px;
+    border-radius: 20px 20px 10px 10px; /* Door shape */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
     transition: 0.3s;
 }
 
@@ -89,18 +123,36 @@ body {
     margin: 5px 0;
 }
 
-.card:hover, .feature-card:hover, .action-card:hover {
+.feature-card:hover {
     transform: translateY(-5px);
 }
 
-.quick-actions .action-card {
+/* Quick Actions - Small Rectangular Cards */
+.quick-actions .cards {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: white;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-i {
-    font-size: 24px;
+.action-card {
+    background: #222;
+    width: 180px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.action-card i {
+    margin-right: 10px;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
 }
