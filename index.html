@@ -13,7 +13,7 @@
         }
         body {
             display: flex;
-            background-color: #0d0d0d;
+            background-color: #121212;
             color: white;
             font-family: Arial, sans-serif;
             overflow-x: hidden;
@@ -21,85 +21,105 @@
         .container {
             display: flex;
             width: 100%;
-            max-width: 1400px;
+            max-width: 1366px;
             margin: auto;
         }
         .sidebar {
-            width: 250px;
+            width: 200px;
             padding: 20px;
-            background: #111;
+            background: #1e1e1e;
             height: 100vh;
         }
         .sidebar h2 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .sidebar ul {
             list-style: none;
         }
         .sidebar li {
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .sidebar a {
             color: white;
             text-decoration: none;
-            display: block;
-            padding: 10px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .sidebar a:hover {
-            background: #222;
         }
         .content {
             flex: 1;
-            padding: 30px;
+            padding: 20px;
         }
         .banner {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            background: #222;
-            padding: 20px;
+            justify-content: center;
+            background: #ff8b8b;
+            padding: 15px;
             border-radius: 10px;
             max-width: 100%;
         }
         .banner img {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             margin-right: 15px;
         }
-        .stats, .feature-grid, .quick-actions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+        .stats {
+            display: flex;
+            justify-content: space-between;
             margin-top: 20px;
         }
-        .stat-box, .feature-card, .quick-action {
-            background: #181818;
+        .stat-box {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            margin: 0 5px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            background: #222;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 180px;
         }
-        .stat-box:hover, .feature-card:hover, .quick-action:hover {
-            transform: scale(1.05);
+        .feature-card span {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
         }
         .quick-actions {
             margin-top: 20px;
-        }
-        .quick-actions a {
-            display: block;
-            color: white;
-            background: #222;
-            padding: 15px;
+            background: #1e1e1e;
+            padding: 20px;
             border-radius: 10px;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .actions a {
+            flex: 1;
+            color: white;
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
             text-decoration: none;
             text-align: center;
-            transition: 0.3s;
+            font-size: 14px;
         }
-        .quick-actions a:hover {
-            background: #333;
+        .separator {
+            border-bottom: 1px solid #333;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -109,18 +129,16 @@
             <h2>Welcome to Achie</h2>
             <nav>
                 <ul>
-                    <li><a href="#">🏠 Home</a></li>
-                    <li><a href="#">📜 Privacy Policy</a></li>
-                    <li><a href="#">⚖️ Terms of Service</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </nav>
         </aside>
         <main class="content">
             <section class="banner">
-                <div>
-                    <img src="https://i.ibb.co/0pYGzR8/Achie-logo-cc.png" alt="Achie Logo" class="avatar">
-                    <h1>Achie</h1>
-                </div>
+                <img src="https://i.ibb.co/0pYGzR8/Achie-logo-cc.png" alt="Achie Logo" class="avatar">
+                <h1>Achie</h1>
             </section>
             <section class="overview">
                 <h2>Overview</h2>
@@ -130,24 +148,26 @@
                     <div class="stat-box">⏳<p>Uptime</p><span>100.0%</span></div>
                 </div>
             </section>
+            <div class="separator"></div>
             <section class="features">
                 <h2>Bot Features</h2>
                 <div class="feature-grid">
-                    <div class="feature-card">👋 <strong>Greeting</strong><p>Greet members when they join.</p></div>
-                    <div class="feature-card">🚀 <strong>Boost Greet</strong><p>Celebrate server boosters.</p></div>
-                    <div class="feature-card">🛡️ <strong>Moderation</strong><p>Advanced moderation tools.</p></div>
-                    <div class="feature-card">🤖 <strong>Auto Mod</strong><p>Auto-moderation features.</p></div>
-                    <div class="feature-card">🎁 <strong>Giveaway</strong><p>Host fun giveaways.</p></div>
-                    <div class="feature-card">📜 <strong>Logging</strong><p>Save important logs.</p></div>
-                    <div class="feature-card">🎟️ <strong>Ticketing</strong><p>Support ticket system.</p></div>
-                    <div class="feature-card">⭐ <strong>Role Management</strong><p>Manage roles easily.</p></div>
+                    <div class="feature-card"><span>👋</span><strong>Greeting</strong><p>Greet members when they join.</p></div>
+                    <div class="feature-card"><span>🚀</span><strong>Boost Greet</strong><p>Celebrate server boosters.</p></div>
+                    <div class="feature-card"><span>🛡️</span><strong>Moderation</strong><p>Advanced moderation tools.</p></div>
+                    <div class="feature-card"><span>🤖</span><strong>Auto Mod</strong><p>Auto-moderation features.</p></div>
+                    <div class="feature-card"><span>🎁</span><strong>Giveaway</strong><p>Host fun giveaways.</p></div>
+                    <div class="feature-card"><span>📜</span><strong>Logging</strong><p>Save important logs.</p></div>
+                    <div class="feature-card"><span>🎟️</span><strong>Ticketing</strong><p>Support ticket system.</p></div>
+                    <div class="feature-card"><span>⭐</span><strong>Role Management</strong><p>Manage roles easily.</p></div>
                 </div>
             </section>
+            <div class="separator"></div>
             <section class="quick-actions">
                 <h2>Quick Actions</h2>
-                <div class="quick-actions-grid">
-                    <a href="https://discord.gg/TrPdQQxjcJ" class="quick-action">🆘 Support Server</a>
-                    <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands" class="quick-action">🤖 Invite</a>
+                <div class="actions">
+                    <a href="https://discord.gg/TrPdQQxjcJ">🆘 Support Server</a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands">🤖 Invite</a>
                 </div>
             </section>
         </main>
