@@ -31,22 +31,9 @@
             background: #1e1e1e;
             height: 100vh;
         }
-        .sidebar h2 {
-            margin-bottom: 15px;
-        }
-        .sidebar ul {
-            list-style: none;
-        }
-        .sidebar li {
-            margin: 10px 0;
-        }
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-        }
         .content {
             flex: 1;
-            padding: 20px;
+            padding: 30px;
         }
         .banner {
             display: flex;
@@ -56,79 +43,23 @@
             padding: 15px;
             border-radius: 10px;
             max-width: 100%;
+            margin-bottom: 20px;
         }
-        .banner img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin-right: 15px;
-            margin-left: 0px;
+        .stats, .feature-grid, .actions {
+            margin-top: 30px;
         }
-        .stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .stat-box {
+        .stat-box, .feature-card, .actions a {
             background: linear-gradient(145deg, #1a1a1a, #222222);
             padding: 15px;
             border-radius: 12px;
             text-align: center;
-            flex: 1;
-            margin: 0 5px;
             box-shadow: 4px 4px 8px #0e0e0e, -4px -4px 8px #2a2a2a;
             transition: all 0.3s ease-in-out;
-            border: 1px solid #333;
+            border: 2px solid white;
         }
-        .stat-box:hover {
+        .stat-box:hover, .feature-card:hover, .actions a:hover {
             transform: translateY(-5px);
             box-shadow: 6px 6px 12px #0e0e0e, -6px -6px 12px #2a2a2a;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .feature-card {
-            background: #222;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .feature-card strong {
-            margin-top: 10px;
-        }
-        .feature-card p {
-            margin-top: 5px;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-        .quick-actions {
-            margin-top: 20px;
-        }
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .actions a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 180px;
-            height: 70px;
-            color: white;
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 1rem;
         }
     </style>
 </head>
@@ -136,15 +67,10 @@
     <div class="container">
         <aside class="sidebar">
             <h2>Welcome to Achie</h2>
-            <nav>
-                <ul>
-                    <li><a href="#">🏠 Home</a></li>
-                </ul>
-            </nav>
         </aside>
         <main class="content">
             <section class="banner">
-                <img src="https://i.ibb.co/Mk58p744/Achie-new-logo.png" alt="Achie Logo" class="avatar">
+                <img src="https://i.ibb.co/Mk58p744/Achie-new-logo.png" alt="Achie Logo">
                 <h1>Achie</h1>
             </section>
             <section class="overview">
