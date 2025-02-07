@@ -33,4 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.transform = "translateY(0)";
         });
     });
+
+    // Handle sidebar navigation active state
+    const currentPage = window.location.pathname.split("/").pop(); // Get the current file name
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active"); // Highlight the active link
+        }
+    });
+
+    // Ensure sidebar navigation works smoothly
+    console.log("Sidebar navigation updated.");
 });
