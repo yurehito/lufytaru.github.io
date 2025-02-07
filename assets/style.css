@@ -1,167 +1,83 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0d0d0d;
-    color: #ffffff;
+    font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark theme */
+    color: white;
     display: flex;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 250px;
-    background-color: #181818;
+    width: 200px;
+    background-color: #1c1c1c;
     padding: 20px;
     height: 100vh;
     position: fixed;
-    left: 0;
-    top: 0;
 }
 
 .sidebar h2 {
     font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: white;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 15px 0;
-}
-
-.sidebar ul li a {
-    color: #b0b0b0;
+.sidebar a {
+    display: block;
+    color: #bbb;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
+    padding: 10px 0;
 }
 
-.sidebar ul li a:hover {
-    color: #ffffff;
+.sidebar a:hover {
+    color: white;
 }
 
 /* Main Content */
 .main-content {
+    margin-left: 220px;
+    padding: 20px;
     flex-grow: 1;
-    padding: 40px;
-    margin-left: 270px;
 }
 
-/* Banner (Pink Background) */
+/* Banner */
 .banner {
+    background-color: #ffb6c1; /* Light pink */
+    padding: 15px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
-    background: #f8b8d0; /* Light Pink */
-    padding: 20px;
-    border-radius: 10px;
+    justify-content: flex-start;
 }
 
-.banner .avatar {
-    width: 60px;
-    height: 60px;
+.bot-avatar {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    margin-right: 15px;
-    background-color: #fff; /* White background to ensure visibility */
-    object-fit: cover; /* Ensure the image is properly scaled */
+    margin-right: 10px;
 }
 
-.banner h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #000; /* Black text for contrast */
-}
-
-/* Section Headers */
-.overview h2,
-.features h2,
-.quick-actions h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-}
-
-/* Overview Cards */
-.cards {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-    font-size: 16px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card span {
-    font-weight: bold;
+.bot-name {
     font-size: 20px;
+    font-weight: bold;
+    color: black;
 }
 
-/* Feature Cards */
-.feature-card {
+/* Policy Container */
+.policy-container {
     background-color: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
-    width: 270px;
-    text-align: left;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+    margin-top: 20px;
 }
 
-.feature-card:hover {
-    transform: scale(1.05);
+.policy-container h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-.feature-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.feature-card p {
-    font-size: 14px;
-    color: #b0b0b0;
-}
-
-/* Quick Actions */
-.actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.actions a {
-    background-color: #292929;
-    color: #ffffff;
-    padding: 12px 18px;
-    text-decoration: none;
-    border-radius: 8px;
+.policy-container p {
     font-size: 16px;
-    transition: background 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.actions a:hover {
-    background-color: #3a3a3a;
-    transform: scale(1.05);
+    color: #ddd;
 }
