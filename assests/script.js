@@ -34,16 +34,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Handle sidebar navigation active state
-    const currentPage = window.location.pathname.split("/").pop(); // Get the current file name
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    navLinks.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active"); // Highlight the active link
-        }
+    // Fix emoji alignment in overview, feature cards, and quick actions
+    const overviewIcons = document.querySelectorAll(".overview .card i");
+    overviewIcons.forEach(icon => {
+        icon.style.fontSize = "26px"; // Adjust emoji size
+        icon.style.display = "block"; // Keep emoji above text
+        icon.style.marginBottom = "8px";
     });
 
-    // Ensure sidebar navigation works smoothly
-    console.log("Sidebar navigation updated.");
+    const featureIcons = document.querySelectorAll(".feature-card i");
+    featureIcons.forEach(icon => {
+        icon.style.fontSize = "22px"; // Match Overview size
+        icon.style.display = "block";
+        icon.style.marginBottom = "6px";
+    });
+
+    const quickActionIcons = document.querySelectorAll(".quick-actions .action-card i");
+    quickActionIcons.forEach(icon => {
+        icon.style.fontSize = "18px"; // Smaller size for left-side icons
+        icon.style.marginRight = "8px"; // Space between icon & text
+    });
 });

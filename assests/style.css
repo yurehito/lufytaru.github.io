@@ -7,27 +7,18 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 250px;
+    width: 200px; /* Reduced width */
     height: 100vh;
     position: fixed;
     background: #111;
     padding: 20px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    width: 50px;
-    border-radius: 50%;
-}
-
-.logo span {
-    font-size: 20px;
+.sidebar-title {
+    font-size: 16px;
     font-weight: bold;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 .nav-links {
@@ -49,32 +40,37 @@ body {
 
 /* Main Content */
 .main-content {
-    margin-left: 270px;
+    margin-left: 220px;
     padding: 20px;
 }
 
-/* Banner - Now applied to all pages */
+/* Banner */
 .banner {
-    background: #ffb6c1; /* Light pink background */
+    background: #ffb6c1;
     padding: 50px;
     text-align: center;
     position: relative;
 }
 
-.bot-info {
-    position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.bot-info img {
-    width: 100px;
+.banner-content img {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 
-/* Overview Section - Square Cards */
+.banner-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Overview Section */
 .overview .cards {
     display: flex;
     gap: 20px;
@@ -93,14 +89,20 @@ body {
     justify-content: center;
     text-align: center;
     transition: 0.3s;
+    font-size: 14px;
 }
 
 .overview .card i {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 24px; /* Standardized size */
+    margin-bottom: 5px;
 }
 
-/* Feature Section - Door-Shaped Cards */
+.overview .card p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Feature Section */
 .features .cards {
     display: flex;
     flex-wrap: wrap;
@@ -112,7 +114,7 @@ body {
     background: #222;
     width: 180px;
     height: 230px;
-    border-radius: 20px 20px 10px 10px; /* Door shape */
+    border-radius: 20px 20px 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,6 +125,7 @@ body {
 }
 
 .feature-card h3 {
+    font-size: 16px;
     margin: 5px 0;
 }
 
@@ -130,7 +133,7 @@ body {
     transform: translateY(-5px);
 }
 
-/* Quick Actions - Small Rectangular Cards */
+/* Quick Actions */
 .quick-actions .cards {
     display: flex;
     gap: 20px;
@@ -144,41 +147,21 @@ body {
     height: 60px;
     border-radius: 10px;
     display: flex;
+    flex-direction: column; /* Align emojis above text */
     align-items: center;
     justify-content: center;
     text-align: center;
     text-decoration: none;
     color: white;
     transition: 0.3s;
+    font-size: 14px;
 }
 
 .action-card i {
-    margin-right: 10px;
+    font-size: 18px; /* Standardized size */
+    margin-bottom: 5px;
 }
 
 .action-card:hover {
     transform: translateY(-5px);
-}
-
-/* Terms of Service & Privacy Policy Pages */
-.legal-content {
-    background: #181818;
-    padding: 30px;
-    border-radius: 10px;
-    margin-top: 70px;
-}
-
-.legal-content h2 {
-    color: #ffb6c1; /* Light pink heading */
-    text-align: center;
-}
-
-.legal-content p {
-    line-height: 1.6;
-    font-size: 16px;
-}
-
-.legal-content ul {
-    list-style-type: disc;
-    margin-left: 20px;
 }
