@@ -1,14 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".feature-card, .stat-box, .actions a");
+document.addEventListener("DOMContentLoaded", () => {
+    const statBoxes = document.querySelectorAll(".stat-box");
 
-    cards.forEach((card) => {
-        card.addEventListener("mouseover", () => {
-            card.style.transform = "scale(1.1)";
-            card.style.transition = "transform 0.3s ease-in-out";
+    statBoxes.forEach(box => {
+        box.addEventListener("mouseenter", () => {
+            box.style.transform = "translateY(-5px) scale(1.05)";
+            box.style.boxShadow = "8px 8px 16px #0e0e0e, -8px -8px 16px #2a2a2a";
         });
 
-        card.addEventListener("mouseout", () => {
-            card.style.transform = "scale(1)";
+        box.addEventListener("mouseleave", () => {
+            box.style.transform = "translateY(0) scale(1)";
+            box.style.boxShadow = "4px 4px 8px #0e0e0e, -4px -4px 8px #2a2a2a";
         });
     });
 });
