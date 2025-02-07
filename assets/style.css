@@ -51,11 +51,11 @@ body {
     margin-left: 270px;
 }
 
-/* Banner */
+/* Banner (Pink Background) */
 .banner {
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, #181818, #292929);
+    background: #f8b8d0; /* Light Pink */
     padding: 20px;
     border-radius: 10px;
 }
@@ -65,11 +65,14 @@ body {
     height: 60px;
     border-radius: 50%;
     margin-right: 15px;
+    background-color: #fff; /* White background to ensure visibility */
+    object-fit: cover; /* Ensure the image is properly scaled */
 }
 
 .banner h1 {
     font-size: 28px;
     font-weight: bold;
+    color: #000; /* Black text for contrast */
 }
 
 /* Section Headers */
