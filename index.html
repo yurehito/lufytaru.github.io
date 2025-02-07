@@ -25,7 +25,7 @@
             margin: auto;
         }
         .sidebar {
-            width: 200px;
+            width: 220px;
             padding: 20px;
             background: #1e1e1e;
             height: 100vh;
@@ -50,17 +50,18 @@
         .banner {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             background: #ff8b8b;
             padding: 15px;
             border-radius: 10px;
             max-width: 100%;
         }
         .banner img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             margin-right: 15px;
+            margin-left: 0px;
         }
         .stats {
             display: flex;
@@ -68,40 +69,65 @@
             margin-top: 20px;
         }
         .stat-box {
-            background: #222;
+            background: linear-gradient(145deg, #1a1a1a, #222222);
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
             flex: 1;
             margin: 0 5px;
+            box-shadow: 4px 4px 8px #0e0e0e, -4px -4px 8px #2a2a2a;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #333;
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 6px 6px 12px #0e0e0e, -6px -6px 12px #2a2a2a;
         }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
         .feature-card {
             background: #222;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feature-card strong {
+            margin-top: 10px;
+        }
+        .feature-card p {
+            margin-top: 5px;
+            font-size: 0.9em;
+            opacity: 0.8;
         }
         .quick-actions {
             margin-top: 20px;
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         .actions a {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 70px;
             color: white;
-            background: #333;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
             text-decoration: none;
-            text-align: center;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -111,9 +137,7 @@
             <h2>Welcome to Achie</h2>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">🏠 Home</a></li>
                 </ul>
             </nav>
         </aside>
@@ -146,8 +170,8 @@
             <section class="quick-actions">
                 <h2>Quick Actions</h2>
                 <div class="actions">
-                    <a href="https://discord.gg/TrPdQQxjcJ">🆘 Support Server</a>
-                    <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands">🤖 Invite</a>
+                    <a href="https://discord.gg/TrPdQQxjcJ">🆘<br>Support Server</a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands">🤖<br>Invite</a>
                 </div>
             </section>
         </main>
