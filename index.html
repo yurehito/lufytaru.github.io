@@ -4,64 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achie Bot</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <script defer src="assets/script.js"></script>
-    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1366px;
+            margin: auto;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background: #1e1e1e;
+            height: 100vh;
+        }
+        .sidebar h2 {
+            margin-bottom: 15px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin: 10px 0;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ff8b8b;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+        .banner img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            margin: 0 5px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .quick-actions {
+            margin-top: 20px;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .actions a {
+            display: block;
+            color: white;
+            background: #333;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Welcome to Achie</h2>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Banner Section -->
-        <div class="banner">
-            <img src="https://i.ibb.co/0pYGzR8/Achie-logo-cc.png" alt="Achie Logo" class="avatar">
-            <h1>Achie</h1>
-        </div>
-
-        <!-- Overview Section -->
-        <section class="overview">
-            <h2>Overview</h2>
-            <div class="cards">
-                <div class="card">🌍 <p>Total Servers</p> <span>123</span></div>
-                <div class="card">👥 <p>Total Users</p> <span>12.3K</span></div>
-                <div class="card">⏳ <p>Uptime</p> <span>100.0%</span></div>
-            </div>
-        </section>
-
-        <!-- Bot Features Section -->
-        <section class="features">
-            <h2>Bot Features</h2>
-            <div class="cards">
-                <div class="feature-card"><h3>🎉 Greeting</h3><p>Greet members when they join. Supports embed, JSON custom CSS embed, and more.</p></div>
-                <div class="feature-card"><h3>🚀 Boost Greet</h3><p>Celebrate members who boost your server with a special message.</p></div>
-                <div class="feature-card"><h3>🔨 Moderation</h3><p>Manage your server with advanced moderation tools.</p></div>
-                <div class="feature-card"><h3>🤖 Auto Mod</h3><p>Automatically moderate content and keep your server clean.</p></div>
-                <div class="feature-card"><h3>🎁 Giveaway</h3><p>Host fun giveaways and reward your community.</p></div>
-                <div class="feature-card"><h3>📜 Logging</h3><p>Save your Discord logs, including VC, chat, moderation, and more.</p></div>
-                <div class="feature-card"><h3>🎟️ Ticketing</h3><p>Make your support ticket system without cluttering.</p></div>
-                <div class="feature-card"><h3>⭐ Role</h3><p>Easily assign and manage roles for your members.</p></div>
-            </div>
-        </section>
-
-        <!-- Quick Actions -->
-        <section class="quick-actions">
-            <h2>Quick Actions</h2>
-            <div class="actions">
-                <a href="privacy.html">🔒 Privacy Policy</a>
-                <a href="terms.html">📜 Terms of Service</a>
-                <a href="https://discord.gg/TrPdQQxjcJ">🆘 Support Server</a>
-                <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands">🤖 Invite</a>
-            </div>
-        </section>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Welcome to Achie</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <section class="banner">
+                <img src="https://i.ibb.co/0pYGzR8/Achie-logo-cc.png" alt="Achie Logo" class="avatar">
+                <h1>Achie</h1>
+            </section>
+            <section class="overview">
+                <h2>Overview</h2>
+                <div class="stats">
+                    <div class="stat-box">🌍<p>Total Servers</p><span>123</span></div>
+                    <div class="stat-box">👥<p>Total Users</p><span>12.3K</span></div>
+                    <div class="stat-box">⏳<p>Uptime</p><span>100.0%</span></div>
+                </div>
+            </section>
+            <section class="features">
+                <h2>Bot Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">👋 <strong>Greeting</strong><p>Greet members when they join.</p></div>
+                    <div class="feature-card">🚀 <strong>Boost Greet</strong><p>Celebrate server boosters.</p></div>
+                    <div class="feature-card">🛡️ <strong>Moderation</strong><p>Advanced moderation tools.</p></div>
+                    <div class="feature-card">🤖 <strong>Auto Mod</strong><p>Auto-moderation features.</p></div>
+                    <div class="feature-card">🎁 <strong>Giveaway</strong><p>Host fun giveaways.</p></div>
+                    <div class="feature-card">📜 <strong>Logging</strong><p>Save important logs.</p></div>
+                    <div class="feature-card">🎟️ <strong>Ticketing</strong><p>Support ticket system.</p></div>
+                    <div class="feature-card">⭐ <strong>Role Management</strong><p>Manage roles easily.</p></div>
+                </div>
+            </section>
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions">
+                    <a href="https://discord.gg/TrPdQQxjcJ">🆘 Support Server</a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands">🤖 Invite</a>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html>
