@@ -1,57 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Website Loaded!");
+    console.log("Achie-Bot-Website Loaded Successfully!");
 
-    // Add hover effects for feature cards
+    // Hover effect for feature cards
     const featureCards = document.querySelectorAll(".feature-card");
     featureCards.forEach(card => {
         card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-5px)";
+            card.style.transform = "scale(1.05)";
+            card.style.transition = "0.3s ease-in-out";
+            card.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.2)";
         });
+
         card.addEventListener("mouseleave", () => {
-            card.style.transform = "translateY(0)";
+            card.style.transform = "scale(1)";
+            card.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
         });
     });
 
-    // Add hover effects for overview cards
-    const overviewCards = document.querySelectorAll(".overview .card");
-    overviewCards.forEach(card => {
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-5px)";
+    // Quick actions hover effect
+    const quickActions = document.querySelectorAll(".quick-actions a");
+    quickActions.forEach(action => {
+        action.addEventListener("mouseenter", () => {
+            action.style.opacity = "0.8";
         });
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "translateY(0)";
-        });
-    });
 
-    // Add hover effects for quick action cards
-    const actionCards = document.querySelectorAll(".action-card");
-    actionCards.forEach(card => {
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-5px)";
-        });
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "translateY(0)";
+        action.addEventListener("mouseleave", () => {
+            action.style.opacity = "1";
         });
     });
 
-    // Fix emoji alignment in overview, feature cards, and quick actions
-    const overviewIcons = document.querySelectorAll(".overview .card i");
-    overviewIcons.forEach(icon => {
-        icon.style.fontSize = "26px"; // Adjust emoji size
-        icon.style.display = "block"; // Keep emoji above text
-        icon.style.marginBottom = "8px";
-    });
-
-    const featureIcons = document.querySelectorAll(".feature-card i");
-    featureIcons.forEach(icon => {
-        icon.style.fontSize = "22px"; // Match Overview size
-        icon.style.display = "block";
-        icon.style.marginBottom = "6px";
-    });
-
-    const quickActionIcons = document.querySelectorAll(".quick-actions .action-card i");
-    quickActionIcons.forEach(icon => {
-        icon.style.fontSize = "18px"; // Smaller size for left-side icons
-        icon.style.marginRight = "8px"; // Space between icon & text
+    // Sidebar link active state
+    const sidebarLinks = document.querySelectorAll(".sidebar ul li a");
+    sidebarLinks.forEach(link => {
+        if (link.href === window.location.href) {
+            link.style.backgroundColor = "#7289DA";
+        }
     });
 });
