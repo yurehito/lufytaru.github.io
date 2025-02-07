@@ -13,7 +13,7 @@
         }
         body {
             display: flex;
-            background-color: #121212;
+            background-color: #0d0d0d;
             color: white;
             font-family: Arial, sans-serif;
             overflow-x: hidden;
@@ -21,87 +21,85 @@
         .container {
             display: flex;
             width: 100%;
-            max-width: 1366px;
+            max-width: 1400px;
             margin: auto;
         }
         .sidebar {
-            width: 200px;
+            width: 250px;
             padding: 20px;
-            background: #1e1e1e;
+            background: #111;
             height: 100vh;
         }
         .sidebar h2 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .sidebar ul {
             list-style: none;
         }
         .sidebar li {
-            margin: 10px 0;
+            margin: 15px 0;
         }
         .sidebar a {
             color: white;
             text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background: #222;
         }
         .content {
             flex: 1;
-            padding: 20px;
+            padding: 30px;
         }
         .banner {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: #ff8b8b;
-            padding: 15px;
+            justify-content: space-between;
+            background: #222;
+            padding: 20px;
             border-radius: 10px;
             max-width: 100%;
         }
         .banner img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             margin-right: 15px;
         }
-        .stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .stat-box {
-            background: #222;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            flex: 1;
-            margin: 0 5px;
-        }
-        .feature-grid {
+        .stats, .feature-grid, .quick-actions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
-        .feature-card {
-            background: #222;
-            padding: 15px;
-            border-radius: 8px;
+        .stat-box, .feature-card, .quick-action {
+            background: #181818;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
+            transition: transform 0.3s;
+        }
+        .stat-box:hover, .feature-card:hover, .quick-action:hover {
+            transform: scale(1.05);
         }
         .quick-actions {
             margin-top: 20px;
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
         }
-        .actions a {
+        .quick-actions a {
             display: block;
             color: white;
-            background: #333;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
             text-decoration: none;
             text-align: center;
+            transition: 0.3s;
+        }
+        .quick-actions a:hover {
+            background: #333;
         }
     </style>
 </head>
@@ -111,16 +109,18 @@
             <h2>Welcome to Achie</h2>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">🏠 Home</a></li>
+                    <li><a href="#">📜 Privacy Policy</a></li>
+                    <li><a href="#">⚖️ Terms of Service</a></li>
                 </ul>
             </nav>
         </aside>
         <main class="content">
             <section class="banner">
-                <img src="https://i.ibb.co/0pYGzR8/Achie-logo-cc.png" alt="Achie Logo" class="avatar">
-                <h1>Achie</h1>
+                <div>
+                    <img src="https://i.ibb.co/0pYGzR8/Achie-logo-cc.png" alt="Achie Logo" class="avatar">
+                    <h1>Achie</h1>
+                </div>
             </section>
             <section class="overview">
                 <h2>Overview</h2>
@@ -145,9 +145,9 @@
             </section>
             <section class="quick-actions">
                 <h2>Quick Actions</h2>
-                <div class="actions">
-                    <a href="https://discord.gg/TrPdQQxjcJ">🆘 Support Server</a>
-                    <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands">🤖 Invite</a>
+                <div class="quick-actions-grid">
+                    <a href="https://discord.gg/TrPdQQxjcJ" class="quick-action">🆘 Support Server</a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1267591670619312230&permissions=10587093855999&scope=bot%20applications.commands" class="quick-action">🤖 Invite</a>
                 </div>
             </section>
         </main>
