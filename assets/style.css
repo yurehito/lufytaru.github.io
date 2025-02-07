@@ -1,25 +1,27 @@
-/* General Page Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
     margin: 0;
-    padding: 0;
     display: flex;
 }
 
 /* Sidebar */
 .sidebar {
-    background-color: #1e1e1e;
+    width: 250px;
+    background-color: #181818;
     padding: 20px;
-    width: 200px;
-    min-height: 100vh;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 .sidebar h2 {
     font-size: 18px;
-    color: white;
-    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
@@ -28,104 +30,138 @@ body {
 }
 
 .sidebar ul li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .sidebar ul li a {
+    color: #b0b0b0;
     text-decoration: none;
-    color: white;
-    display: block;
-    padding: 8px;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-    background-color: #7289DA;
-    border-radius: 5px;
-}
-
-/* Pink Banner */
-.banner {
-    background-color: #ffccd5; /* Light Pink */
-    width: 100%;
-    height: 150px; /* Adjust height as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.banner .avatar {
-    height: 100px; /* Adjust size as needed */
-    width: auto;
-    margin-right: 10px;
-}
-
-.banner h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: black; /* Change to white if needed */
+    color: #ffffff;
 }
 
 /* Main Content */
 .main-content {
     flex-grow: 1;
+    padding: 40px;
+    margin-left: 270px;
+}
+
+/* Banner (Pink Background) */
+.banner {
+    display: flex;
+    align-items: center;
+    background: #f8b8d0; /* Light Pink */
     padding: 20px;
+    border-radius: 10px;
 }
 
-/* Overview Section */
-.overview h2, .features h2, .quick-actions h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.banner .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-color: #fff; /* White background to ensure visibility */
+    object-fit: cover; /* Ensure the image is properly scaled */
 }
 
+.banner h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000; /* Black text for contrast */
+}
+
+/* Section Headers */
+.overview h2,
+.features h2,
+.quick-actions h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Overview Cards */
 .cards {
     display: flex;
-    flex-wrap: wrap;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .card {
-    background-color: #222;
-    padding: 15px;
-    border-radius: 8px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    flex: 1;
-    min-width: 150px;
+    width: 200px;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card span {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /* Feature Cards */
 .feature-card {
-    background-color: #222;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 270px;
+    text-align: left;
     flex: 1;
-    min-width: 150px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #b0b0b0;
 }
 
 /* Quick Actions */
 .actions {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .actions a {
-    background-color: #333;
-    padding: 10px 15px;
-    border-radius: 5px;
+    background-color: #292929;
+    color: #ffffff;
+    padding: 12px 18px;
     text-decoration: none;
-    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .actions a:hover {
-    background-color: #7289DA;
+    background-color: #3a3a3a;
+    transform: scale(1.05);
 }
