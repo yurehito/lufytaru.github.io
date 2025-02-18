@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="background">
+        <source src="https://cdn.discordapp.com/attachments/1217468741135110144/1341480177682878514/CORPSE._-_mirorgem_1080p_h264.mp4?ex=67b62645&is=67b4d4c5&hm=880d2201197c942c41d184b866318a94b33dd2f1e79a0b2b05a45b23a06628bc&" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="profile-card">
+        <img src="https://i.ibb.co/4nnP0QZV/Hanako-pfp-modified.png" alt="Your Avatar" class="avatar">
+        <h1>Your Name</h1>
+        <p>Web Designer | Developer | Gamer</p>
+        <div class="social-links">
+            <a href="https://discordapp.com/users/998608551431897170">Discord</a>
+            <a href="https://www.instagram.com/yurehito/">Instagram</a>
+            <a href="https://github.com/yurehito">GitHub</a>
+        </div>
+    </div>
+
+    <div class="music-player">
+        <p>Now Playing: <span id="song-title">Your Song</span></p>
+        <audio id="audio" controls>
+            <source src="your-song.mp3" type="audio/mpeg">
+        </audio>
+        <canvas id="visualizer"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
